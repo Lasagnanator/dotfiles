@@ -1,0 +1,24 @@
+[user]
+	email = {{ .user.git.email }}
+	name = {{ .user.git.name }}
+[pull]
+	rebase = true
+[init]
+	defaultBranch = master
+[core]
+	excludesFile = ~/.gitignore
+[status]
+	showUntrackedFiles = all
+[alias]
+	st = status
+	cm = commit
+	co = checkout
+	sw = switch
+	unstage = reset HEAD --
+	last = log -1 HEAD
+	br = branch
+	wt = worktree
+	bootstrap = !git init && git add . && git commit -m 'First commit'
+	lli = log --oneline --graph
+	pl = pull
+	ps = push

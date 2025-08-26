@@ -1,0 +1,7 @@
+.rsyncignore
+.envrc
+venv*
+.venv
+*.tmp.*
+*.bak.*
+.nvim
