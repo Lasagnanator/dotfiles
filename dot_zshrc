@@ -54,7 +54,7 @@ autoload -Uz edit-command-line && zle -N edit-command-line && bindkey '^[e' edit
 export WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
 export EDITOR='nvim'
 export VISUAL='nvim' 
-export PATH="$PATH:~/.local/bin:~/.scripts"
+export PATH="${PATH}:${HOME}/.local/bin:${HOME}/.scripts"
 export COLORTERM='truecolor'
 
 ### ALIASES ###
