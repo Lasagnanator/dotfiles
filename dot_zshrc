@@ -111,3 +111,8 @@ command -v starship >/dev/null 2>&1 && eval "$(starship init zsh)"
 ### SDKMAN ###
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+### WSL ###
+if [[ -v WSLENV ]]; then
+    PATH="$(echo "${PATH}" | sed -re 's/[^:]*systemprofile[^:]*://g')"
+fi
