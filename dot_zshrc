@@ -28,7 +28,7 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
 ### OPTIONS ###
 setopt autocd
-# setopt correct
+setopt correct
 unsetopt beep
 
 ### HISTORY ###
