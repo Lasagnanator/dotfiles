@@ -74,6 +74,7 @@ alias tf='terraform'
 alias lz='lazygit'
 alias ldk='lazydocker'
 alias bt='bluetoothctl'
+alias cm='chezmoi'
 
 # Packet managers
 alias pac='sudo pacman'
