@@ -82,6 +82,13 @@ alias zyp='sudo zypper'
 alias dnf='sudo dnf'
 alias apt='sudo apt'
 
+### FUNCTIONS ###
+reload() {
+    echo -ne '\033[1mReloading configuration... '
+    source ~/.zshrc
+    echo -e '\033[1;32mDone!'
+}
+
 ### PER-ENVIRONMENT CONFIGURATION ###
 if [[ ! -d "${HOME}/.zshrc.d" ]]; then
    mkdir -p "${HOME}/.zshrc.d"
