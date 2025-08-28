@@ -30,6 +30,14 @@ These are the binaries that are configured to work with, are used by this config
 - UV
 - Fuck
 
+### Environment management
+
+- SDKMAN (Java and derivatives)
+- UV (Python)
+- NVM (Node and Javascript)
+- Go (lmao)
+- Cargo (Rust)
+
 ## Template variables
 
 If `chezmoi` usage is planned those are the variables that should be declared in the `.chezmoidata` file.
