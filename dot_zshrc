@@ -78,6 +78,7 @@ alias lz='lazygit'
 alias ldk='lazydocker'
 alias bt='bluetoothctl'
 alias cm='chezmoi'
+alias open='xdg-open'
 
 # Packet managers
 alias pac='sudo pacman'
