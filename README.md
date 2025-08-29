@@ -8,9 +8,11 @@
 Dotfiles used across multiple OSes and distros.
 Managed through `chezmoi`.
 
-## Dependencies
+# Packages
 
 These are the binaries that are configured to work with, are used by this configuration files or I generally use to work, mix and match as you please.
+
+## Dependencies
 
 ### Mandatory
 
@@ -30,7 +32,7 @@ These are the binaries that are configured to work with, are used by this config
 - UV
 - Fuck
 
-### Environment management
+## Environment management
 
 - SDKMAN (Java and derivatives)
 - UV (Python)
@@ -38,7 +40,13 @@ These are the binaries that are configured to work with, are used by this config
 - Go (lmao)
 - Cargo (Rust)
 
-## Template variables
+## Distro-specific
+
+### Arch
+
+- pkgfile
+
+# Template variables
 
 If `chezmoi` usage is planned those are the variables that should be declared in the `.chezmoidata` file.
 
