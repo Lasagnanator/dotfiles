@@ -79,6 +79,7 @@ alias ldk='lazydocker'
 alias bt='bluetoothctl'
 alias cm='chezmoi'
 alias open='xdg-open'
+alias venv='activate_venv'
 
 # Packet managers
 alias pac='sudo pacman'
@@ -91,6 +92,18 @@ reload() {
     echo -ne '\033[1mReloading configuration... '
     source ~/.zshrc
     echo -e '\033[1;32mDone!'
+}
+
+activate_venv() {
+    local GIT_REPO CURRENT_DIR
+    GIT_REPO="$(git rev-parse --show-toplevel 2>/dev/null)"
+    CURRENT_DIR="${GIT_REPO:-$PWD}"
+    if [[ -f "${CURRENT_DIR}/.venv/bin/activate" ]]; then
+        source "${CURRENT_DIR}/.venv/bin/activate"
+        echo -e '\033[1;32mLoaded virtual environment!'
+    else
+        echo -e "\\033[1;31mNo virtual environment found in ${CURRENT_DIR}!"
+    fi
 }
 
 ### PER-ENVIRONMENT CONFIGURATION ###
