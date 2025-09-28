@@ -78,6 +78,8 @@ alias lz='lazygit'
 alias ldk='lazydocker'
 alias bt='bluetoothctl'
 alias cm='chezmoi'
+alias lt='eza -T'
+alias ltl='eza -T --level'
 alias open='xdg-open'
 alias venv='activate_venv'
 
