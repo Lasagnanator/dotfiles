@@ -47,8 +47,16 @@ setopt hist_find_no_dups
 ### KEYBINDS ###
 bindkey -e
 # bindkey '^[w' kill-region
-bindkey '^[s' sudo-command-line
-autoload -Uz edit-command-line && zle -N edit-command-line && bindkey '^[e' edit-command-line
+bindkey '^[s' sudo-command-line # Alt-S
+bindkey '^u' backward-kill-line # Ctrl-U
+bindkey "^[[3~" delete-char     # Delete
+bindkey '^[[1;5C' forward-word  # Ctrl-right
+bindkey '^[[1;5D' backward-word # Ctrl-left
+bindkey '^H' backward-kill-word # Ctrl-Delete
+bindkey '^[[3;5~' kill-word     # Ctrl-Delete
+autoload -Uz edit-command-line && \
+zle -N edit-command-line && \
+bindkey '^[e' edit-command-line # Alt-e
 
 ### ENVS ###
 export WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
