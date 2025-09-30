@@ -93,7 +93,7 @@ alias apt='sudo apt'
 reload() {
     echo -ne '\033[1mReloading configuration... '
     source ~/.zshrc
-    echo -e '\033[1;32mDone!'
+    echo -e '\033[1;32mDone!\n'
 }
 
 activate_venv() {
