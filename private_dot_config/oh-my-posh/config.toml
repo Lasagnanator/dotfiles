@@ -76,7 +76,7 @@ type = "python"
 style = "plain"
 foreground = 'yellow'
 background = 'transparent'
-template = "  {{ .Full }} {{ if .Venv }}({{ .Venv }}) {{ end }} "
+template = " {{ .Full }}{{ if .Venv }} ({{ .Venv }}){{ end }}"
 
 [[blocks]]
 type = 'rprompt'
