@@ -90,6 +90,7 @@ alias lt='eza -T'
 alias ltl='eza -T --level'
 alias open='xdg-open'
 alias venv='activate_venv'
+alias srsync='rsync --rsync-path="sudo rsync"'
 
 # Packet managers
 alias pac='sudo pacman'
