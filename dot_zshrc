@@ -136,6 +136,10 @@ command -v thefuck >/dev/null 2>&1 && eval "$(thefuck --alias)"
 # command -v starship >/dev/null 2>&1 && eval "$(starship init zsh)"
 command -v oh-my-posh >/dev/null 2>&1 && eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/config.toml)"
 
+### KREW ###
+export KREW_DIR="${KREW_ROOT:-$HOME/.krew}"
+[[ -d "$KREW_DIR" ]] && export PATH="${PATH}:${KREW_DIR}/bin"
+
 ### NVM ###
 export NVM_DIR="$HOME/.nvm"
 [[ -s "$NVM_DIR/nvm.sh" ]] && source "$NVM_DIR/nvm.sh"
@@ -146,7 +150,7 @@ export SDKMAN_DIR="$HOME/.sdkman"
 
 ### WSL ###
 if [[ -v WSLENV ]]; then
-    PATH="${PATH}:/mnt/c/Windows/:/mnt/c/Windows/System32:/mnt/c/Windows/System32/WindowsPowerShell/v1.0"
+    export PATH="${PATH}:/mnt/c/Windows/:/mnt/c/Windows/System32:/mnt/c/Windows/System32/WindowsPowerShell/v1.0"
     keep_current_path() {
       printf "\e]9;9;%s\e\\" "$(wslpath -w "$PWD")"
     }
