@@ -1,5 +1,11 @@
 input {
-    keyboard { numlock; }
+    keyboard {
+        xkb {
+            layout "us"
+            options "compose:menu"
+        }
+        numlock
+    }
     touchpad {
         tap
         natural-scroll
