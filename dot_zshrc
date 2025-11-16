@@ -101,7 +101,7 @@ alias apt='sudo apt'
 ### FUNCTIONS ###
 reload() {
     echo -ne '\033[1mReloading configuration... '
-    source ~/.zshrc
+    source "${HOME}/.zshrc"
     echo -e '\033[1;32mDone!\n'
 }
 
