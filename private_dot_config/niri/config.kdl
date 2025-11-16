@@ -61,7 +61,7 @@ window-rule {
 }
 
 window-rule {
-    match app-id=r#"zen$"#
+    match app-id=r#"zen$"# title="— Zen Browser$"
     open-maximized true
 }
 
@@ -73,6 +73,11 @@ window-rule {
 window-rule {
     match app-id="steam" title="^Friends List$"
     open-floating true
+}
+
+window-rule {
+    match app-id="steam" title="^Steam$"
+    open-maximized true
 }
 
 window-rule {
