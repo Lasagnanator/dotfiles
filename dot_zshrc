@@ -136,6 +136,14 @@ command -v thefuck >/dev/null 2>&1 && eval "$(thefuck --alias)"
 # command -v starship >/dev/null 2>&1 && eval "$(starship init zsh)"
 command -v oh-my-posh >/dev/null 2>&1 && eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/config.toml)"
 
+### KUBECTL ###
+if command -v kubectl >/dev/null 2>&1; then
+    KUBECONFIGS_PATH="${HOME}/.kube/config.d/"
+    [[ ! -d "${KUBECONFIGS_PATH}" ]] && mkdir -p "${KUBECONFIGS_PATH}"
+    KUBECONFIG="$(find "${KUBECONFIGS_PATH}" -type f | tr '\n' ':')"
+    export KUBECONFIG
+fi
+
 ### KREW ###
 export KREW_DIR="${KREW_ROOT:-$HOME/.krew}"
 [[ -d "$KREW_DIR" ]] && export PATH="${PATH}:${KREW_DIR}/bin"
