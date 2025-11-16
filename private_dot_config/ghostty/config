@@ -49,7 +49,7 @@
 # resize-overlay-duration = 4s 200ms
 theme = "TokyoNight Night"
 font-family = ""
-font-family = "JetBrains Mono"
+font-family = "JetBrainsMono Nerd Font"
 font-family = "Symbols Nerd Font"
 font-family = "Flog Symbols"
 font-size = 11
