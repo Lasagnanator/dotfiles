@@ -2,8 +2,8 @@
 # Bootstrap
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 if [[ ! -d "$ZINIT_HOME" ]]; then
-   mkdir -p "$(dirname "$ZINIT_HOME")"
-   git clone 'https://github.com/zdharma-continuum/zinit.git' "$ZINIT_HOME"
+    mkdir -p "$(dirname "$ZINIT_HOME")"
+    git clone 'https://github.com/zdharma-continuum/zinit.git' "$ZINIT_HOME"
 fi
 source "${ZINIT_HOME}/zinit.zsh"
 
@@ -71,14 +71,14 @@ bindkey '^[[1;5C' forward-word  # Ctrl-right
 bindkey '^[[1;5D' backward-word # Ctrl-left
 bindkey '^H' backward-kill-word # Ctrl-Delete
 bindkey '^[[3;5~' kill-word     # Ctrl-Delete
-autoload -Uz edit-command-line && \
-zle -N edit-command-line && \
-bindkey '^[e' edit-command-line # Alt-e
+autoload -Uz edit-command-line &&
+    zle -N edit-command-line &&
+    bindkey '^[e' edit-command-line # Alt-e
 
 ### ENVS ###
 export WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
 export EDITOR='nvim'
-export VISUAL='nvim' 
+export VISUAL='nvim'
 export PATH="${PATH}:${HOME}/.local/bin:${HOME}/.scripts"
 export COLORTERM='truecolor'
 
@@ -136,7 +136,7 @@ activate_venv() {
 
 ### PER-ENVIRONMENT CONFIGURATION ###
 if [[ ! -d "${HOME}/.zshrc.d" ]]; then
-   mkdir -p "${HOME}/.zshrc.d"
+    mkdir -p "${HOME}/.zshrc.d"
 fi
 for rc in "${HOME}/.zshrc.d/"*(N); do
     if [[ -f "${rc}" ]]; then
