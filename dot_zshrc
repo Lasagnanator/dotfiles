@@ -18,6 +18,23 @@ zinit snippet OMZP::command-not-found
 zinit snippet OMZP::eza
 zinit snippet OMZP::sudo
 
+### WSL ###
+if [[ -v WSLENV ]]; then
+    export PATH="${PATH}:/mnt/c/Windows/:/mnt/c/Windows/System32:/mnt/c/Windows/System32/WindowsPowerShell/v1.0"
+    keep_current_path() {
+        printf "\e]9;9;%s\e\\" "$(wslpath -w "$PWD")"
+    }
+    precmd_functions+=(keep_current_path)
+    DOCKER_COMP_PATH="${HOME}/.docker/completions"
+    if command -v docker >/dev/null 2>&1; then
+        if [[ ! -s "${DOCKER_COMP_PATH}/_docker" ]]; then
+            mkdir -p "${DOCKER_COMP_PATH}"
+            docker completion zsh > "${DOCKER_COMP_PATH}/_docker"
+        fi
+        FPATH="${FPATH}:${DOCKER_COMP_PATH}"
+    fi
+fi
+
 ### COMPLETION ###
 autoload -Uz compinit && compinit
 zinit cdreplay -q
@@ -156,11 +173,3 @@ export NVM_DIR="$HOME/.nvm"
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$SDKMAN_DIR/bin/sdkman-init.sh" ]] && source "$SDKMAN_DIR/bin/sdkman-init.sh"
 
-### WSL ###
-if [[ -v WSLENV ]]; then
-    export PATH="${PATH}:/mnt/c/Windows/:/mnt/c/Windows/System32:/mnt/c/Windows/System32/WindowsPowerShell/v1.0"
-    keep_current_path() {
-      printf "\e]9;9;%s\e\\" "$(wslpath -w "$PWD")"
-    }
-    precmd_functions+=(keep_current_path)
-fi
