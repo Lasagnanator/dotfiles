@@ -51,6 +51,8 @@ These are the binaries that are configured to work with, are used by this config
 If `chezmoi` usage is planned those are the variables that should be declared in the `.chezmoidata` file.
 
 ```toml
+[opts]
+ui = false
 [user.git]
 name = ""
 email = ""

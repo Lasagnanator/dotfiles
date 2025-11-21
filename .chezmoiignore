@@ -1,1 +1,5 @@
 README.md
+{{- if not .opts.ui }}
+private_dot_config/ghostty/
+private_dot_config/niri/
+{{- end }}
