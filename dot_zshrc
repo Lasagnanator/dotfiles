@@ -163,6 +163,11 @@ if command -v kubectl >/dev/null 2>&1; then
     export KUBECONFIG
 fi
 
+### RUSTUP ON ARCH ###
+if pacman -Q rustup >/dev/null 2>&1; then
+    export PATH="${PATH}:/usr/lib/rustup/bin/"
+fi
+
 ### KREW ###
 export KREW_DIR="${KREW_ROOT:-$HOME/.krew}"
 [[ -d "$KREW_DIR" ]] && export PATH="${PATH}:${KREW_DIR}/bin"
