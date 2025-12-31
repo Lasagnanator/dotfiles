@@ -36,6 +36,11 @@ if [[ -v WSLENV ]]; then
 fi
 
 ### COMPLETION ###
+export CUSTOM_COMP_DIR="${HOME}/.zcomp"
+if [[ ! -d "${CUSTOM_COMP_DIR}" ]]; then
+    mkdir -p "${CUSTOM_COMP_DIR}"
+fi
+fpath+=${CUSTOM_COMP_DIR}
 autoload -Uz compinit && compinit
 zinit cdreplay -q
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
@@ -161,11 +166,6 @@ if command -v kubectl >/dev/null 2>&1; then
     [[ ! -d "${KUBECONFIGS_PATH}" ]] && mkdir -p "${KUBECONFIGS_PATH}"
     KUBECONFIG="$(find "${KUBECONFIGS_PATH}" -type f | tr '\n' ':')"
     export KUBECONFIG
-fi
-
-### RUSTUP ON ARCH ###
-if pacman -Q rustup >/dev/null 2>&1; then
-    export PATH="${PATH}:/usr/lib/rustup/bin/"
 fi
 
 ### KREW ###
