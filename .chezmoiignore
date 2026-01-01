@@ -3,3 +3,6 @@ README.md
 private_dot_config/ghostty/
 private_dot_config/niri/
 {{- end }}
+{{- if ne .chezmoi.osRelease.id "arch" }}
+aur-*
+{{- end }}
