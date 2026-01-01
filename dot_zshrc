@@ -18,7 +18,20 @@ zinit snippet OMZP::command-not-found
 zinit snippet OMZP::eza
 zinit snippet OMZP::sudo
 
-### WSL ###
+### SYSTEM SETUP ###
+# Local bin folder
+if [[ ! -d "${HOME}/.local/bin" ]]; then
+    mkdir -p "${HOME}/.local/bin"
+fi
+export PATH="${PATH}:${HOME}/.local/bin"
+
+# Custom completions
+export CUSTOM_COMP_DIR="${HOME}/.zcomp"
+if [[ ! -d "${CUSTOM_COMP_DIR}" ]]; then
+    mkdir -p "${CUSTOM_COMP_DIR}"
+fi
+
+# WSL
 if [[ -v WSLENV ]]; then
     export PATH="${PATH}:/mnt/c/Windows/:/mnt/c/Windows/System32:/mnt/c/Windows/System32/WindowsPowerShell/v1.0"
     keep_current_path() {
@@ -36,10 +49,6 @@ if [[ -v WSLENV ]]; then
 fi
 
 ### COMPLETION ###
-export CUSTOM_COMP_DIR="${HOME}/.zcomp"
-if [[ ! -d "${CUSTOM_COMP_DIR}" ]]; then
-    mkdir -p "${CUSTOM_COMP_DIR}"
-fi
 fpath+=${CUSTOM_COMP_DIR}
 autoload -Uz compinit && compinit
 zinit cdreplay -q
@@ -84,7 +93,6 @@ autoload -Uz edit-command-line &&
 export WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
 export EDITOR='nvim'
 export VISUAL='nvim'
-export PATH="${PATH}:${HOME}/.local/bin:${HOME}/.scripts"
 export COLORTERM='truecolor'
 
 ### ALIASES ###
