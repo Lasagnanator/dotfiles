@@ -23,13 +23,14 @@ zinit snippet OMZP::sudo
 if [[ ! -d "${HOME}/.local/bin" ]]; then
     mkdir -p "${HOME}/.local/bin"
 fi
-export PATH="${PATH}:${HOME}/.local/bin"
+path+=${HOME}/.local/bin
 
 # Custom completions
 export CUSTOM_COMP_DIR="${HOME}/.zcomp"
 if [[ ! -d "${CUSTOM_COMP_DIR}" ]]; then
     mkdir -p "${CUSTOM_COMP_DIR}"
 fi
+fpath+=${CUSTOM_COMP_DIR}
 
 # WSL
 if [[ -v WSLENV ]]; then
@@ -49,7 +50,6 @@ if [[ -v WSLENV ]]; then
 fi
 
 ### COMPLETION ###
-fpath+=${CUSTOM_COMP_DIR}
 autoload -Uz compinit && compinit
 zinit cdreplay -q
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
