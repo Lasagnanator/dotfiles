@@ -73,6 +73,11 @@ end
 # TODO: add integration with fzf (maybe), zoxide, direnv, rbenv and starship
 # TODO: add sourcing for NVM, Krew and SDKMAN
 
+# Scripts
+command -v starship >/dev/null 2>&1 && starship init fish | source
+command -v direnv >/dev/null 2>&1 && direnv hook fish | source
+command -v rbenv >/dev/null 2>&1 && rbenv init - --no-rehash fish | source
+
 # Kubectl
 if command -v kubectl >/dev/null 2>&1
     set KUBECONFIGS_PATH "$HOME/.kube/config.d/"
