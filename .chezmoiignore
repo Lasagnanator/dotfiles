@@ -6,3 +6,9 @@ private_dot_config/niri/
 {{- if ne .chezmoi.osRelease.id "arch" }}
 aur-*
 {{- end }}
+{{- if not .opts.shell.fish }}
+private_dot_config/fish
+{{- end }}
+{{- if not .opts.shell.zsh }}
+dot_zshrc
+{{- end }}

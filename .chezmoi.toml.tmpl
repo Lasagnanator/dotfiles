@@ -1,5 +1,8 @@
 [data.opts]
 ui = {{ promptBoolOnce . "opts.ui" "Enable UI configurations" false }}
+[data.opts.shell]
+fish = {{ promptBoolOnce . "opts.shell.fish" "Enable fish config" true }}
+zsh = {{ promptBoolOnce . "opts.shell.zsh" "Enable zsh config" false }}
 [data.user.git]
 name = {{ promptStringOnce . "user.git.name" "Git username" "Lasagnanator" | quote }}
 email = {{ promptStringOnce . "user.git.email" "Git email" "d96a07@gmail.com" | quote }}
