@@ -96,6 +96,11 @@ if command -v kubectl >/dev/null 2>&1
     set -gx KUBECONFIG
 end
 
+### PLUGINS ###
+
+# fzf.fish
+fzf_configure_bindings --variable=\e\cv --directory=\ct
+
 ### DISTRO-SPECIFIC ###
 
 # Arch
