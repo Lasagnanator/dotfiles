@@ -84,9 +84,10 @@ end
 # TODO: add sourcing for NVM, Krew and SDKMAN
 
 # Scripts
-command -v starship >/dev/null 2>&1 && starship init fish | source
-command -v direnv >/dev/null 2>&1 && direnv hook fish | source
-command -v rbenv >/dev/null 2>&1 && rbenv init - --no-rehash fish | source
+command -q starship && starship init fish | source
+command -q direnv && direnv hook fish | source
+command -q zoxide && zoxide init fish | source
+command -q rbenv && rbenv init - --no-rehash fish | source
 
 # Kubectl
 if command -v kubectl >/dev/null 2>&1
