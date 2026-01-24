@@ -43,7 +43,16 @@ if status is-interactive
     alias venv activate_venv
     alias srsync 'rsync --rsync-path "sudo rsync"'
 
-    # Packet managers
+    # Eza
+    alias ls="eza"
+    alias l="eza"
+    alias ll="eza --long --smart-group --group-directories-first --git --icons"
+    alias la="eza --all --long --smart-group --group-directories-first --git --icons"
+    alias lm="eza --all --long --git --icons --sort=modified"
+    alias lc="eza --all --long --binary --extended --group --header --links --inode --created --modified --accessed --blocksize --group-directories-first --git --icons"
+    alias lt="eza --all --tree"
+
+    # Package managers
     alias pac 'sudo pacman'
     alias zyp 'sudo zypper'
     alias dnf 'sudo dnf'
