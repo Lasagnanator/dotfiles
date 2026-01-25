@@ -80,8 +80,6 @@ function activate_venv --description "Activates Python virtual environment from 
 end
 
 ### INTEGRATIONS ###
-# TODO: add integration with fzf (maybe), zoxide, direnv, rbenv and starship
-# TODO: add sourcing for NVM, Krew and SDKMAN
 
 # Scripts
 command -q starship && starship init fish | source
