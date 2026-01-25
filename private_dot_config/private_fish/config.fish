@@ -107,3 +107,4 @@ fzf_configure_bindings --variable=\e\cv --directory=\ct
 # Arch
 set -gx AUR_REPO_PATH '/aur'
 set -gx AUR_DB_PATH "$AUR_REPO_PATH/aur.db"
+alias cilium cilium-cli
