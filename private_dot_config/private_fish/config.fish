@@ -82,7 +82,7 @@ end
 ### INTEGRATIONS ###
 
 # Scripts
-command -q starship && starship init fish | source
+command -q starship && starship init fish | source && enable_transience
 command -q direnv && direnv hook fish | source
 command -q zoxide && zoxide init fish | source
 command -q rbenv && rbenv init - --no-rehash fish | source
