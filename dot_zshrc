@@ -34,7 +34,7 @@ fpath+=${CUSTOM_COMP_DIR}
 
 # WSL
 if [[ -v WSLENV ]]; then
-    export PATH="${PATH}:/mnt/c/Windows/:/mnt/c/Windows/System32:/mnt/c/Windows/System32/WindowsPowerShell/v1.0"
+    export PATH="${PATH}:/mnt/c/Windows/:/mnt/c/Windows/System32:/mnt/c/Windows/System32/WindowsPowerShell/v1.0:/mnt/c/Program Files/PowerShell/7:/mnt/c/Users/andrea.divo/AppData/Local/Programs/Zed/bin"
     keep_current_path() {
         printf "\e]9;9;%s\e\\" "$(wslpath -w "$PWD")"
     }

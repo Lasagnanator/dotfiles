@@ -78,6 +78,13 @@ foreground = 'yellow'
 background = 'transparent'
 template = " {{ .Full }}{{ if .Venv }} ({{ .Venv }}){{ end }}"
 
+# [[blocks.segments]]
+# type = "kubectl"
+# style = "plain"
+# foreground = "blue"
+# background = "transparent"
+# template  = "󱃾 {{ .Context }}{{ if .Namespace }} :: {{ .Namespace }}{{ end }}"
+
 [[blocks]]
 type = 'rprompt'
 overflow = 'hidden'
