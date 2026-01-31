@@ -1,0 +1,8 @@
+[custom.chezmoi]
+when = 'test -n "$CHEZMOI"'
+symbol = '🏡'
+
+[kubernetes]
+disabled = false
+detect_env_vars = [ 'KUBIE_ACTIVE' ]
+symbol = '⚓ '
