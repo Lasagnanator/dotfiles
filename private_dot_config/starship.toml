@@ -1,5 +1,6 @@
 [custom.chezmoi]
 when = 'test -n "$CHEZMOI"'
+shell = ["sh", "--noprofile" , "--norc"]
 symbol = '🏡'
 
 [kubernetes]
