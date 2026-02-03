@@ -1,3 +1,5 @@
+scan_timeout = 50
+
 [custom.chezmoi]
 when = 'test -n "$CHEZMOI"'
 shell = ["sh", "--noprofile" , "--norc"]
