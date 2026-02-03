@@ -41,6 +41,7 @@ if status is-interactive
     alias cm chezmoi
     alias open xdg-open
     alias venv activate_venv
+    alias cdg cd_git_root
     alias srsync 'rsync --rsync-path "sudo rsync"'
 
     # Eza
@@ -76,6 +77,15 @@ function activate_venv --description "Activates Python virtual environment from 
         echo -e '\033[1;32mLoaded virtual environment!'
     else
         echo -e "\\033[1;31mNo virtual environment found in $BASE_DIR!"
+    end
+end
+
+function cd_git_root --description "Change directory to the root of the current git project"
+    set GIT_ROOT (git rev-parse --show-toplevel 2>/dev/null)
+    if test -n "$GIT_ROOT"
+        cd "$GIT_ROOT"
+    else
+        echo -e "\\033[1;31mYou are not in a git directory!"
     end
 end
 
