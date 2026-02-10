@@ -1,3 +1,10 @@
 default_editor: nvim
 prompt:
   disable: true
+configs:
+  include:
+      - ~/.kube/config
+      - ~/.kube/config.d/*.yml
+      - ~/.kube/config.d/*.yaml
+      - ~/.kube/configs/*.yml
+      - ~/.kube/configs/*.yaml
