@@ -20,6 +20,7 @@ end
 set -gx EDITOR nvim
 set -gx VISUAL nvim
 set -gx COLORTERM truecolor
+set -gx fish_greeting 'Sphynx of black quartz, judge my vow ~'
 
 ### ALIASES ###
 
