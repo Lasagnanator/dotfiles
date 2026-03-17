@@ -37,7 +37,7 @@ if status is-interactive
     alias b bat
     alias ke kubie
     alias tf terraform
-    alias ot opentofu
+    alias ot tofu
     alias lz lazygit
     alias ldk lazydocker
     alias cm chezmoi
